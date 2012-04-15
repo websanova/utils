@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Websanova Utils</title>
+
+	<script type="text/javascript" src="./inc/jquery.1.7.1.min.js"></script>
+	<script type="text/javascript" src="./wUtils.js"></script>
+	
+	<style>
+		.function{font-weight:bold;font-size:20px;}
+		.sample{margin:5px 20px;}
+	</style>
+</head>
+<body>
+
+	<!-------------------------------------------->
+	<!-- postJSON
+	<!-------------------------------------------->
+	<div class="function">jQuery.postJSON()</div>
+	<div class="sample">
+
+		<script type="text/javascript">
+			$("#postJSON").click(function(){
+				$.postJSON(
+					'/put/path/here',
+					{
+						val1: 'Cheetos',
+						val2: 'Nachos'
+					},
+					function(response)
+					{
+						//do something
+					}
+				);
+			});
+		</script>
+	</div>
+
+	<!-------------------------------------------->
+	<!-- stop
+	<!-------------------------------------------->
+	<div class="function">jQuery.stop()</div>
+	<div class="sample">
+		<span id="stop">click me</span>
+		
+		<script type="text/javascript">
+			$("#stop").click(function(e){
+				$.stop(e, true, true);
+
+				//do something
+			});
+		</script>
+	</div>
+
+	<!-------------------------------------------->
+	<!-- shuffleArray
+	<!-------------------------------------------->
+	<div class="function">jQuery.shuffleArray()</div>
+	<div class="sample">
+		<span id="shuffleArray"></span>
+		
+		<script type="text/javascript">
+			var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+			
+			$("#shuffleArray").append(arr.toString() + '<br/>');
+
+			$.shuffleArray(arr);
+			
+			$("#shuffleArray").append(arr.toString());
+		</script>
+	</div>
+
+	<!-------------------------------------------->
+	<!-- reload
+	<!-------------------------------------------->
+	<div class="function">jQuery.reload()</div>
+	<div class="sample">
+		<span id="reload">reload</span>
+
+		<script type="text/javascript">
+
+			$("#reload").click(function(){ $.reload(); });
+
+		</script>
+	</div>
+    	
+	<!-------------------------------------------->
+	<!-- uri
+	<!-------------------------------------------->
+	<div class="function">jQuery.uri()</div>
+	<div class="sample">
+		<span id="uri"></span>
+		
+		<script type="text/javascript">
+
+			$("#uri").append($.uri(1));
+
+		</script>
+	</div>
+	
+	<!-------------------------------------------->
+	<!-- URLParams
+	<!-------------------------------------------->
+	<div class="function">jQuery.URLParams()</div>
+	<div class="sample">
+		<span id="URLParams"></span>
+		
+		<script type="text/javascript">
+
+			$("#URLParams").append(JSON.stringify($.URLParams()));
+
+		</script>
+	</div>
+	
+	<!-------------------------------------------->
+	<!-- URLHash
+	<!-------------------------------------------->
+	<div class="function">jQuery.URLHash()</div>
+	<div class="sample">
+		<span id="URLHash"></span>
+		
+		<script type="text/javascript">
+
+			$("#URLHash").append($.URLHash());
+
+		</script>
+	</div>
+
+	<!-------------------------------------------->
+	<!-- hexToRgb
+	<!-------------------------------------------->
+	<div class="function">jQuery.hexToRgb()</div>
+	<div class="sample">
+		<span id="hexToRgb"></span>
+		
+		<script type="text/javascript">
+
+			$("#hexToRgb").append($.hexToRgb());
+			$("#hexToRgb").append($.hexToRgb(''));
+			$("#hexToRgb").append($.hexToRgb(22));
+			$("#hexToRgb").append($.hexToRgb('#AA'));
+			$("#hexToRgb").append($.hexToRgb('#ZZ'));
+			$("#hexToRgb").append($.hexToRgb('#AZA'));
+			$("#hexToRgb").append($.hexToRgb('#ZAZ'));
+			$("#hexToRgb").append($.hexToRgb('#3388'));
+			$("#hexToRgb").append($.hexToRgb('#FF3'));
+			$("#hexToRgb").append($.hexToRgb('#336699'));
+
+		</script>
+	</div>
+
+	<!-------------------------------------------->
+	<!-- rgbToHex
+	<!-------------------------------------------->
+	<div class="function">jQuery.rgbToHex()</div>
+	<div class="sample">
+		<span id="rgbToHex"></span>
+		
+		<script type="text/javascript">
+
+			$("#rgbToHex").append($.rgbToHex());
+			$("#rgbToHex").append($.rgbToHex(''));
+			$("#rgbToHex").append($.rgbToHex(22));
+			$("#rgbToHex").append($.rgbToHex('rgb'));
+			$("#rgbToHex").append($.rgbToHex('rgb()'));
+			$("#rgbToHex").append($.rgbToHex('rgb(,,)'));
+			$("#rgbToHex").append($.rgbToHex('rgb(22,43)'));
+			$("#rgbToHex").append($.rgbToHex('rgb(256,1,1)'));
+			$("#rgbToHex").append($.rgbToHex('rgb(22,67,284)'));
+			$("#rgbToHex").append($.rgbToHex('rgb(22,67,241)'));
+			$("#rgbToHex").append($.rgbToHex('rgb(22,67,34'));
+
+		</script>
+	</div>
+
+	<!-------------------------------------------->
+	<!-- hexOrRGB
+	<!-------------------------------------------->
+	<div class="function">jQuery.hexOrRgb()</div>
+	<div class="sample">
+		<span id="hexOrRgb"></span>
+		
+		<script type="text/javascript">
+
+			$("#hexOrRgb").append($.hexOrRgb());
+			$("#hexOrRgb").append($.hexOrRgb(''));
+			$("#hexOrRgb").append($.hexOrRgb(22));
+			$("#hexOrRgb").append($.hexOrRgb('#AA'));
+			$("#hexOrRgb").append($.hexOrRgb('#ZZ'));
+			$("#hexOrRgb").append($.hexOrRgb('#AZA'));
+			$("#hexOrRgb").append($.hexOrRgb('#ZAZ'));
+			$("#hexOrRgb").append($.hexOrRgb('#3388'));
+			$("#hexOrRgb").append($.hexOrRgb('#FF3'));
+			$("#hexOrRgb").append($.hexOrRgb('#336699'));
+			$("#hexOrRgb").append($.hexOrRgb('rgb'));
+			$("#hexOrRgb").append($.hexOrRgb('rgb()'));
+			$("#hexOrRgb").append($.hexOrRgb('rgb(,,)'));
+			$("#hexOrRgb").append($.hexOrRgb('rgb(22,43)'));
+			$("#hexOrRgb").append($.hexOrRgb('rgb(256,1,1)'));
+			$("#hexOrRgb").append($.hexOrRgb('rgb(22,67,284)'));
+			$("#hexOrRgb").append($.hexOrRgb('rgb(22,67,241)'));
+			$("#hexOrRgb").append($.hexOrRgb('rgb(22,67,34'));
+
+		</script>
+	</div>
+
+	<!-------------------------------------------->
+	<!-- base64Encode
+	<!-------------------------------------------->
+	<div class="function">jQuery.base64Encode()</div>
+	<div class="sample">
+		<span id="base64Encode"></span>
+		
+		<script type="text/javascript">
+
+			$("#base64Encode").append($.base64Encode('encode this string'));
+
+		</script>
+	</div>
+
+	<!-------------------------------------------->
+	<!-- base64Decode
+	<!-------------------------------------------->
+	<div class="function">jQuery.base64Decode()</div>
+	<div class="sample">
+		<span id="base64Decode"></span>
+		
+		<script type="text/javascript">
+
+			$("#base64Decode").append($.base64Decode('ZW5jb2RlIHRoaXMgc3RyaW5n'));
+
+		</script>
+	</div>
+
+	<!-------------------------------------------->
+	<!-- utf8Encode
+	<!-------------------------------------------->
+	<div class="function">jQuery.utf8Encode()</div>
+	<div class="sample">
+		<span id="utf8Encode"></span>
+		
+		<script type="text/javascript">
+
+			$("#utf8Encode").append($.utf8Encode('utf8 encode this'));
+
+		</script>
+	</div>
+
+	<!-------------------------------------------->
+	<!-- utf8Decode
+	<!-------------------------------------------->
+	<div class="function">jQuery.utf8Decode()</div>
+	<div class="sample">
+		<span id="utf8Decode"></span>
+		
+		<script type="text/javascript">
+
+			$("#utf8Decode").append($.utf8Decode('utf decode this'));
+
+		</script>
+	</div>
+
+	<!-------------------------------------------->
+	<!-- removeClassRegEx
+	<!-------------------------------------------->
+	<div class="function">.removeClassRegEx()</div>
+	<div class="sample">
+		<span id="removeClassRegEx" class="Test Testing someTest aaTestaa leaveme"></span>
+
+		<script type="text/javascript">
+		
+			$("#removeClassRegEx").append($("#removeClassRegEx").attr('class') + '<br/>');
+			$("#removeClassRegEx").removeClassRegEx(/test/i);
+			$("#removeClassRegEx").append($("#removeClassRegEx").attr('class'));
+
+		</script>
+	</div>
+
+	<!-------------------------------------------->
+	<!-- hasClassRegEx
+	<!-------------------------------------------->
+	<div class="function">.hasClassRegEx()</div>
+	<div class="sample">
+		<span id="hasClassRegEx" class="Test Testing someTest aaTestaa"></span>
+
+		<script type="text/javascript">
+            $("#hasClassRegEx").append($("#hasClassRegEx").hasClassRegEx() ? 'true' : 'false');
+            $("#hasClassRegEx").append($("#hasClassRegEx").hasClassRegEx('') ? 'true' : 'false');
+            $("#hasClassRegEx").append($("#hasClassRegEx").hasClassRegEx('Test') ? 'true' : 'false');
+            $("#hasClassRegEx").append($("#hasClassRegEx").hasClassRegEx(/ /) ? 'true' : 'false');
+            $("#hasClassRegEx").append($("#hasClassRegEx").hasClassRegEx(/Test/) ? 'true' : 'false');
+            $("#hasClassRegEx").append($("#hasClassRegEx").hasClassRegEx(/^Test/) ? 'true' : 'false');
+            $("#hasClassRegEx").append($("#hasClassRegEx").hasClassRegEx(/Test$/) ? 'true' : 'false');
+            $("#hasClassRegEx").append($("#hasClassRegEx").hasClassRegEx(/^Test$/) ? 'true' : 'false');
+            $("#hasClassRegEx").append($("#hasClassRegEx").hasClassRegEx(/test/) ? 'true' : 'false');
+            $("#hasClassRegEx").append($("#hasClassRegEx").hasClassRegEx(/test/i) ? 'true' : 'false');
+		</script>
+	</div>
+
+	
+	<!-------------------------------------------->
+	<!-- maxChars
+	<!-------------------------------------------->
+	<div class="function">.maxChars()</div>
+	<div class="sample">
+		<span id="maxChars_counter">50</span>
+		<textarea id="maxChars"></textarea>
+		<textarea id="maxChars2"></textarea>
+		
+		<script type="text/javascript">
+
+			$("#maxChars").keyup(function(){$(this).maxChars(50, $("#maxChars_counter"))});
+			
+			$("#maxChars2").keyup(function(){$(this).maxChars(50)});
+
+		</script>
+	</div>
+
+	<!-------------------------------------------->
+	<!-- sizeof
+	<!-------------------------------------------->
+	<div class="function">Object.sizeof()</div>
+	<div class="sample">
+		<span id="sizeof"></span>
+		
+		<script type="text/javascript">
+
+			var animals = {cow: 'moo', duck: 'quack'}
+			var moo = 'moo';
+
+			$("#sizeof").append(animals.sizeof());
+			$("#sizeof").append(moo.sizeof());
+
+		</script>
+	</div>
+
+	<!-------------------------------------------->
+	<!-- capitalize
+	<!-------------------------------------------->
+	<div class="function">String.capitalize()</div>
+	<div class="sample">
+		<span id="capitalize"></span>
+		
+		<script type="text/javascript">
+
+			$("#capitalize").html('TEST'.capitalize());
+
+		</script>
+	</div>
+
+	<!-------------------------------------------->
+	<!-- isHex
+	<!-------------------------------------------->
+	<div class="function">String.isHex()</div>
+	<div class="sample">
+		<span id="isHex"></span>
+		
+		<script type="text/javascript">
+
+			$("#isHex").append(''.isHex() ? 'true' : 'false');
+			$("#isHex").append('#'.isHex() ? 'true' : 'false');
+			$("#isHex").append('#a'.isHex() ? 'true' : 'false');
+			$("#isHex").append('aacc88'.isHex() ? 'true' : 'false');
+			$("#isHex").append('AACC88'.isHex() ? 'true' : 'false');
+			$("#isHex").append('aCaCaC'.isHex() ? 'true' : 'false');
+			$("#isHex").append('#aacc88'.isHex() ? 'true' : 'false');
+			$("#isHex").append('#AACC88'.isHex() ? 'true' : 'false');
+			$("#isHex").append('#AcAcAc'.isHex() ? 'true' : 'false');
+
+		</script>
+	</div>
+		
+	<!-------------------------------------------->
+	<!-- pxToInt
+	<!-------------------------------------------->
+	<div class="function">String.pxToInt()</div>
+	<div class="sample">
+		<span id="pxToInt" style="width:200px"></span>
+		
+		<script type="text/javascript">
+
+			$("#pxToInt").html($("#pxToInt").css('width').pxToInt());
+
+		</script>
+	</div>
+
+	<!-------------------------------------------->
+	<!-- reverse
+	<!-------------------------------------------->
+	<div class="function">String.reverse()</div>
+	<div class="sample">
+		<span id="reverse"></span>
+
+		<script type="text/javascript">
+
+			$("#reverse").html("hello".reverse());
+
+		</script>
+	</div>
+
+	<!-------------------------------------------->
+	<!-- wordCount
+	<!-------------------------------------------->
+	<div class="function">String.wordCount()</div>
+	<div class="sample">
+		<span id="wordCount"></span>
+
+		<script type="text/javascript">
+
+			$("#wordCount").html("how many words are here".wordCount());
+
+		</script>
+	</div>
+
+	<!-------------------------------------------->
+	<!-- htmlEntities
+	<!-------------------------------------------->
+	<div class="function">String.htmlEntities()</div>
+	<div class="sample">
+		<span id="htmlEntities"></span>
+
+		<script type="text/javascript">
+
+			$("#htmlEntities").append("<html class=\"test\">hello</html>".htmlEntities());
+
+		</script>
+	</div>
+
+	<!-------------------------------------------->
+	<!-- stripTags
+	<!-------------------------------------------->
+	<div class="function">String.stripTags()</div>
+	<div class="sample">
+		<span id="stripTags"></span>
+
+		<script type="text/javascript">
+
+			$("#stripTags").text('<html class="">hello</html>'.stripTags());
+
+		</script>
+	</div>
+	
+	<!-------------------------------------------->
+	<!-- trim
+	<!-------------------------------------------->
+	<div class="function">String.trim()</div>
+	<div class="sample">
+		<span id="trim"></span>
+
+		<script type="text/javascript">
+
+			$("#trim").append("*" + ' test this     '.trim() + "*");
+
+		</script>
+	</div>
+	
+	<!-------------------------------------------->
+	<!-- stripNonAlpha
+	<!-------------------------------------------->
+	<div class="function">String.stripNonAlpha()</div>
+	<div class="sample">
+		<span id="stripNonAlpha"></span>
+
+		<script type="text/javascript">
+
+			$("#stripNonAlpha").append("*" + '  he56llo&*(!65@#$%65^&*(2)__)t2es2t*(*())  '.stripNonAlpha() + "*");
+
+0		</script>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
