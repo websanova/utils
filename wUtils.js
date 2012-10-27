@@ -8,7 +8,7 @@
  * @license         These websanova utils are dual licensed under the MIT and GPL licenses.
  * @link            http://www.websanova.com
  * @github			http://github.com/websanova/utils
- * @version 		1.1.0
+ * @version 		1.2.0
  *
  ******************************************/
 
@@ -311,17 +311,22 @@ jQuery.extend(
 		return false;
 	}; 
 	
-	$.fn.maxChars = function(max_chars, target)
+	$.fn.maxChars = function(maxlength)
 	{
-		var current_chars = $(this).val().length;
-		var chars_left = max_chars - current_chars;
-		
-		if(target) target.html(chars_left < 0 ? 0 : chars_left);
-		
-		if(current_chars > max_chars)
+		return this.each(function()
 		{
-			$(this).val($(this).val().substring(0, max_chars));
-		}
+			var maxChars = maxlength | $(this).attr('maxlength');
+
+			if(!maxChars) return true; //if no max length set, just quit
+
+			$(this).keyup(function()
+			{
+				var currentChars = $(this).val().length;
+				var charsLeft = maxChars - currentChars;
+				
+				if(currentChars > maxChars) $(this).val($(this).val().substring(0, maxChars));
+			});
+		});
 	};
 	
 })(jQuery);

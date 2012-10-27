@@ -308,15 +308,13 @@
 	<!-------------------------------------------->
 	<div class="function">.maxChars()</div>
 	<div class="sample">
-		<span id="maxChars_counter">50</span>
 		<textarea id="maxChars"></textarea>
-		<textarea id="maxChars2"></textarea>
+		<textarea id="maxChars2" maxlength="15"></textarea>
 		
 		<script type="text/javascript">
 
-			$("#maxChars").keyup(function(){$(this).maxChars(50, $("#maxChars_counter"))});
-			
-			$("#maxChars2").keyup(function(){$(this).maxChars(50)});
+			$("#maxChars").maxChars(10);
+			$("#maxChars2").maxChars();
 
 		</script>
 	</div>
