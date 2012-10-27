@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<meta charset="utf-8">
 	<title>Websanova Utils</title>
 
 	<script type="text/javascript" src="./inc/jquery.1.7.1.min.js"></script>
@@ -267,12 +268,16 @@
 	<div class="sample">
 		<span id="removeClassRegEx" class="Test Testing someTest aaTestaa leaveme"></span>
 
+		<div class="removeClassRegEx moo Moo poo zoo"></div>
+		<div class="removeClassRegEx moo Moo poo zoo"></div>
+		<div class="removeClassRegEx moo Moo poo zoo"></div>
+
 		<script type="text/javascript">
-		
 			$("#removeClassRegEx").append($("#removeClassRegEx").attr('class') + '<br/>');
-			$("#removeClassRegEx").removeClassRegEx(/test/i);
+			$("#removeClassRegEx").removeClassRegEx(/test/i).addClass('chaining');
 			$("#removeClassRegEx").append($("#removeClassRegEx").attr('class'));
 
+			$('.removeClassRegEx').removeClassRegEx(/moo/i).addClass('yay').each(function(){ $(this).html($(this).attr('class')); });
 		</script>
 	</div>
 

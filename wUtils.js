@@ -7,7 +7,8 @@
  * @copyright       Copyright (c) 2012 Websanova.
  * @license         These websanova utils are dual licensed under the MIT and GPL licenses.
  * @link            http://www.websanova.com
- * @docs            http://www.websanova.com/plugins/websanova/utils
+ * @github			http://github.com/websanova/utils
+ * @version 		1.1.0
  *
  ******************************************/
 
@@ -282,16 +283,19 @@ jQuery.extend(
 {
 	$.fn.removeClassRegEx = function(regex)
 	{
-		var classes = $(this).attr('class');
-		
-		if(!classes || !regex) return false;
-		
-		var classArray = [];
-		classes = classes.split(' ');
-		
-		for(var i=0, len=classes.length; i<len; i++) if(!classes[i].match(regex)) classArray.push(classes[i])
-		
-		$(this).attr('class', classArray.join(' '));
+		return this.each(function()
+		{
+			var classes = $(this).attr('class');
+			
+			if(!classes || !regex) return false;
+			
+			var classArray = [];
+			classes = classes.split(' ');
+			
+			for(var i=0, len=classes.length; i<len; i++) if(!classes[i].match(regex)) classArray.push(classes[i]);
+			
+			$(this).attr('class', classArray.join(' '));
+		});
 	};
 
 	$.fn.hasClassRegEx = function(regex)
