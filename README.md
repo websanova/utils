@@ -26,9 +26,10 @@ utf8Decode : function (utftext)
 ## Functions / Plugins
 
 ```javascript
-$.fn.removeClassRegEx
-$.fn.hasClassRegEx 
-$.fn.maxChars
+$.fn.removeClassRegEx()
+$.fn.hasClassRegEx()
+$.fn.maxChars()
+$.fn.cssAll()
 ```
 
 

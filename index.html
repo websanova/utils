@@ -320,6 +320,23 @@
 	</div>
 
 	<!-------------------------------------------->
+	<!-- cssAll
+	<!-------------------------------------------->
+	<div class="function">.cssAll()</div>
+	<div class="sample">
+		<div id="cssAll" style="color:red;backgroundColor:blue;height:20px;">First Div</div>
+		<div id="cssAll2">Second Div</div>
+		
+		<script type="text/javascript">
+			
+			var cssAll = $('#cssAll').cssAll('color,backgroundColor,opacity, height,lineHeight: height');
+			console.log(cssAll)
+			$('#cssAll2').css(cssAll);
+
+		</script>
+	</div>
+
+	<!-------------------------------------------->
 	<!-- sizeof
 	<!-------------------------------------------->
 	<div class="function">Object.sizeof()</div>

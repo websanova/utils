@@ -8,7 +8,7 @@
  * @license         These websanova utils are dual licensed under the MIT and GPL licenses.
  * @link            http://www.websanova.com
  * @github			http://github.com/websanova/utils
- * @version 		1.2.0
+ * @version 		1.3.0
  *
  ******************************************/
 
@@ -327,6 +327,26 @@ jQuery.extend(
 				if(currentChars > maxChars) $(this).val($(this).val().substring(0, maxChars));
 			});
 		});
+	};
+
+	$.fn.cssAll = function(css)
+	{
+		var obj = {};
+
+		if(this.length)
+		{
+			var css = css.split(',');
+			var params = [];
+
+			for(var i=0,ii=css.length; i<ii; i++)
+			{
+				params = css[i].split(':');
+
+				obj[$.trim(params[0])] = $(this).css($.trim(params[1] || params[0]));
+			}
+		}
+
+		return obj;
 	};
 	
 })(jQuery);
