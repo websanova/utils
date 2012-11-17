@@ -8,7 +8,7 @@
  * @license         These websanova utils are dual licensed under the MIT and GPL licenses.
  * @link            http://www.websanova.com
  * @github			http://github.com/websanova/utils
- * @version 		1.3.0
+ * @version 		1.4.0
  *
  ******************************************/
 
@@ -348,7 +348,17 @@ jQuery.extend(
 
 		return obj;
 	};
-	
+
+	$.fn.clear = function(msg, delay, fadeOut)
+	{
+		return this.each(function()
+		{
+			var $elem = $(this).html(msg || '').show();
+			clearTimeout($elem.data('_clear_timer'));
+			$elem.data('_clear_timer', setTimeout(function(){ $elem.fadeOut(fadeOut || 500); }, (delay || 3000) ) );
+		});
+	};
+
 })(jQuery);
 
 /***********************************************************
