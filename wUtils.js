@@ -8,7 +8,7 @@
  * @license         These websanova utils are dual licensed under the MIT and GPL licenses.
  * @link            http://www.websanova.com
  * @github			http://github.com/websanova/utils
- * @version 		1.4.0
+ * @version 		1.4.1
  *
  ******************************************/
 

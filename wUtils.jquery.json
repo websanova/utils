@@ -1,0 +1,37 @@
+{
+  "name": "wUtils",
+  "title": "wUtils jQuery Plugin",
+  "description": "A set of jQuery utitlities",
+  "keywords": [
+    "websanova",
+    "wUtils",
+    "utils",
+    "utilities"
+  ],
+  "version": "v1.4.1",
+  "author": {
+    "name": "Websanova",
+    "email": "rob@websanova.com",
+    "url": "http://websanova.com"
+  },
+  "maintainers": [
+    {
+      "name": "Websanova",
+      "email": "rob@websanova.com",
+      "url": "http://websanova.com"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/websanova/utils#license"
+    }
+  ],
+  "bugs": "https://github.com/websanova/utils/issues",
+  "homepage": "http://websanova.com/tutorials/jquery/a-large-collection-of-useful-jquery-utils",
+  "docs": "https://github.com/websanova/utils#wutilsjs",
+  "download": "https://github.com/websanova/utils/tags",
+  "dependencies": {
+    "jquery": ">=1.5"
+  }
+}
