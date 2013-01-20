@@ -1,14 +1,14 @@
 {
   "name": "wUtils",
   "title": "wUtils jQuery Plugin",
-  "description": "A set of jQuery utitlities",
+  "description": "A set of jQuery utitlities by Websanova",
   "keywords": [
     "websanova",
     "wUtils",
     "utils",
     "utilities"
   ],
-  "version": "v1.4.1",
+  "version": "1.4.2",
   "author": {
     "name": "Websanova",
     "email": "rob@websanova.com",
